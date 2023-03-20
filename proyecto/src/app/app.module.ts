@@ -8,13 +8,15 @@ import { CarouselComponent } from 'src/carousel/carousel.component';
 import { TarjetasComponent } from 'src/tarjetas/tarjetas.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TarjetaCategoriaComponent } from 'src/tarjeta-categoria/tarjeta-categoria.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CarouselComponent,
-    TarjetasComponent
+    TarjetasComponent,
+    TarjetaCategoriaComponent
   ],
   imports: [
     BrowserModule,

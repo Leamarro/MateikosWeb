@@ -5,27 +5,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AppService {
-  url='http://localhost:4200/'; // disponer url de su servidor que tiene las páginas PHP
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  recuperarTodos() {
-    return this.http.get(`${this.url}recuperartodos.php`);
+  getUsers() {
+    this.http.get("http://localhost:4200/").subscribe(data => {
+      console.log(data);
+    });
   }
 
-  alta(articulo:any) {
-    return this.http.post(`${this.url}alta.php`, JSON.stringify(articulo));    
   }
-
-  baja(codigo:number) {
-    return this.http.get(`${this.url}baja.php?codigo=${codigo}`);
-  }
-  
-  seleccionar(codigo:number) {
-    return this.http.get(`${this.url}seleccionar.php?codigo=${codigo}`);
-  }
-
-  modificacion(articulo:any) {
-    return this.http.post(`${this.url}modificacion.php`, JSON.stringify(articulo));    
-  } 
-}
